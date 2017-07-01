@@ -22,7 +22,7 @@ d3.json('http://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
   var scaleWidth = d3.scaleLinear()
     .domain([2210, 2390])
     .range([0, chartWidth]);
-  var chart = canvas.append('g')
+  var circles = canvas.append('g')
     .attr('transform', 'translate(' + space / 2 + ',' + space / 2 + ')')
     .selectAll('circle')
     .data(data)
@@ -32,7 +32,7 @@ d3.json('http://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
     .attr('cx', (d) => scaleWidth(d.Seconds))
     .attr('cy', (d) => scaleHeight(d.Place))
     .attr('r', radius);
-  chart.on('mouseover', function (d) {
+  circles.on('mouseover', function (d) {
     d3.select(this)
       .attr('r', radius + 4)
       .attr('stroke', '#f0f0f0')
@@ -42,7 +42,7 @@ d3.json('http://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/mast
       .style('display', 'block')
       .html('<p>' + d.Name + '</p>' + '<p>' + d.Nationality + '</p>' + '<p>' + d.Year + '</p>' + '<p>' + d.Doping + '</p>');
   });
-  chart.on('mouseout', function (d) {
+  circles.on('mouseout', function (d) {
     d3.select(this)
       .attr('r', radius)
       .attr('stroke', 'none');
