@@ -16,6 +16,9 @@ h1{
 	padding: .5em;
 	cursor:pointer;
 }
+.lead {
+  font-size: 3rem;
+}
 svg{
 	display: block;
 	margin:auto;
