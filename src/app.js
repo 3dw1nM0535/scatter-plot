@@ -1,12 +1,14 @@
 var dataUrl = 'http://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json';
 d3.json(dataUrl, function (data) {
   // console.log(data[0].Doping);
-  var width = 1300;
+  var width = 1000;
   var height = 600;
   var space = 50;
   var radius = 5;
   var chartWidth = width - space * 3;
   var chartHeight = height - space;
+
+  d3.select(".container").append("p").attr("class", "lead").text("Doping in Professional Bicycle Racing")
 
   var messageBox = d3.select('.container')
     .append('div')
@@ -17,7 +19,7 @@ d3.json(dataUrl, function (data) {
     .attr('height', height);
   var scaleHeight = d3.scaleLinear()
     .domain([0, 35])
-    .range([chartHeight, 0]);
+    .range([0, chartHeight]);
   var scaleWidth = d3.scaleLinear()
     .domain([2210, 2390])
     .range([0, chartWidth]);
