@@ -1,5 +1,5 @@
 d3.json('http://raw.githubusercontent.com/FreeCodeCamp/ProjectReferenceData/master/cyclist-data.json', function (data) {
-  // console.log(data[0].Doping);
+  
   var width = 1000;
   var height = 600;
   var space = 50;
